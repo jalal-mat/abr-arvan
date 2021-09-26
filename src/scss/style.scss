@@ -1,0 +1,208 @@
+@import "variables";
+@import "mixins";
+
+@font-face {
+    font-family: 'yekan';
+    src: url(../assets/fonts/Yekan.eot),
+        url(../assets/fonts/Yekan.svg),
+        url(../assets/fonts/Yekan.ttf),
+        url(../assets/fonts/Yekan.woff);
+}
+
+html {
+    direction: rtl;
+    font-size: 62.5%;
+
+    body {
+        font-family: 'yekan';
+        background-color: $mainBackgroundColor;
+        font-size: $generalFontSize;
+        margin: 0;
+
+        .projects {
+            @include section(inherit, 100vh, 70%);
+        }
+
+        .structure {
+            @include section($secondLightColor, 60vh, 70%);
+        }
+
+        .projects__container {}
+
+        .title1 {
+            @include title($title1Size, $mainDarkGreen);
+        }
+
+        .title1--center {
+            text-align: center;
+        }
+
+        .title4 {
+            @include title($fontSize16, $mainDarkColor);
+        }
+
+        .main-text {
+            @include textStyle($fontSize16, $mainTextColor);
+        }
+
+        .description {
+            color: $secondDarkGreen;
+            font-size: $descriptionFontSize;
+            padding-top: 0;
+        }
+
+        .description--center {
+            text-align: center;
+        }
+
+        .register__title {}
+
+        .projects__content {
+            display: none;
+        }
+
+        .structure__content {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+
+            li::before {
+                content: "\2022";
+                color: $mainGreen;
+                font-weight: bold;
+                width: 1rem;
+                margin-left: 1.5rem;
+                font-size: 3.5rem;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .content--active {
+            display: grid;
+            grid-template-columns: 80%;
+            column-gap: 3rem;
+            row-gap: .5rem;
+            justify-content: center;
+            background-color: $whiteColor;
+        }
+
+        .projects__feature {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+            width: 90%;
+            margin-right: 5%;
+
+            .projects__item {
+                @include projectFeatures($thirdLightColor, center);
+            }
+
+            .projects__item-icon {
+                margin-top: 1rem;
+            }
+
+            .projects__item-title {
+                margin-bottom: 0;
+                margin-top: .5rem;
+            }
+
+            .projects__main-text {
+                margin-top: 0;
+            }
+
+            .projects__description-item {
+                @include projectFeatures($whiteColor, right);
+                grid-column: 1 / span 4;
+            }
+
+            .projects__description-item-row {
+                display: flex;
+            }
+
+            .projects__description-item-icon {
+                margin: 0 2rem 0 2rem;
+            }
+
+            .projects__description-item-content {
+                margin: 0 2rem 0 2rem;
+
+                .projects__description-item-title {
+                    margin-top: 0;
+                }
+            }
+
+            .projects__item--footer {
+                @include projectFeatures($whiteColor, right, .5rem);
+                grid-column: 1 / span 4;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                border: 1px solid $secondBorderLightGray;
+                border-radius: 1rem;
+            }
+
+            .projects__item--git {
+                @include projectFeatures($whiteColor, right);
+            }
+
+            .projects__item--author {
+                @include projectFeatures($whiteColor, left);
+                direction: ltr;
+            }
+
+            .projects__author-specs {
+                border: 1px solid $firstBorderLightGray;
+                border-radius: 1rem;
+                width: max-content;
+                padding: .5rem 2rem .5rem 2rem;
+                display: flex;
+
+                .projects__author-name {
+                    margin-top: 1.25rem;
+                    margin-right: .5rem;
+                }
+
+                .projects__author-image {
+                    margin-top: .75rem;
+                }
+            }
+
+
+        }
+
+        .arrow-down {
+            float: left;
+            margin-top: .75rem;
+        }
+
+        .register {
+            @include section($whiteColor, 70vh, 50%);
+
+            .register__title {
+                @include title($title3Size, $forthDarkGreen);
+            }
+        }
+
+        .footer {
+            @include section(inherit, 35rem, 60%);
+
+            .footer__container {}
+
+            .footer__title {
+                @include title($title1Size, $forthDarkGreen);
+                text-align: center;
+                margin-top: 5rem;
+            }
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .float-right {
+            float: right;
+        }
+    }
+}

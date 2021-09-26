@@ -1,0 +1,28 @@
+@mixin title($fontSize, $color) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: bold;
+}
+
+@mixin textStyle($fontSize, $color) {
+    font-size: $fontSize;
+    color: $color;
+}
+
+@mixin section($bgColor, $height, $gridTemplateColumns) {
+    background-color: $bgColor;
+    height: $height;
+    display: grid;
+    grid-template-columns: $gridTemplateColumns;
+    grid-gap: 0;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin projectFeatures($bgColor, $textAlign, $padding: 2rem) {
+    background-color: $bgColor;
+    text-align: $textAlign;
+    border-radius: 1.6rem;
+    padding: $padding;
+    align-items: center;
+}
