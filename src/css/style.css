@@ -18,6 +18,14 @@ html {
       grid-gap: 0;
       justify-content: center;
       align-content: center; }
+      html body .projects .projects__tab {
+        background-color: #E7ECF4;
+        border: 0;
+        padding: 1.5rem 3rem 1.5rem 3rem;
+        margin-left: 1rem;
+        border-radius: 1.5rem 1.5rem 0 0; }
+      html body .projects .tab--active {
+        background-color: #fff; }
     html body .structure {
       background-color: #eef2f7;
       height: 60vh;

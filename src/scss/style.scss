@@ -21,7 +21,22 @@ html {
 
         .projects {
             @include section(inherit, 100vh, 70%);
+
+            .projects__tab {
+                background-color: $secondBorderLightGray;
+                border: 0;
+                padding: 1.5rem 3rem 1.5rem 3rem;
+                margin-left: 1rem;
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+
+            .tab--active {
+                background-color: $whiteColor;
+            }
+
         }
+
+
 
         .structure {
             @include section($secondLightColor, 60vh, 70%);

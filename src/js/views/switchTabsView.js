@@ -4,13 +4,13 @@
 
 const switchTabs = function (e, section) {
     const clicked = e.target.closest(`.${section}__tab`);
-    const tabs = document.querySelectorAll(`${section}.__tab`);
+    const tabs = document.querySelectorAll(`.${section}__tab`);
     const tabContent = document.querySelectorAll(`.${section}__content`);
 
     if (!clicked) return;
 
     tabs.forEach(tab => tab.classList.remove('tab--active'));
-    clicked.classList.add('.tab--active');
+    clicked.classList.add('tab--active');
 
     tabContent.forEach(tc => tc.classList.remove('content--active'));
     document.querySelector(`.${section}__content--${clicked.dataset.tab}`).classList.add('content--active');
