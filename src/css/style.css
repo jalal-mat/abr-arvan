@@ -12,23 +12,148 @@ html {
     margin: 0; }
     html body .projects {
       background-color: inherit;
-      height: 100vh;
+      min-height: 100vh;
       display: grid;
       grid-template-columns: 70%;
       grid-gap: 0;
       justify-content: center;
-      align-content: center; }
+      align-content: start; }
+      html body .projects .projects__header {
+        margin-top: 8rem; }
+      html body .projects .projects__body {
+        margin-bottom: 12rem; }
       html body .projects .projects__tab {
         background-color: #E7ECF4;
         border: 0;
         padding: 1.5rem 3rem 1.5rem 3rem;
         margin-left: 1rem;
-        border-radius: 1.5rem 1.5rem 0 0; }
+        border-radius: 1.5rem 1.5rem 0 0;
+        cursor: pointer; }
       html body .projects .tab--active {
         background-color: #fff; }
+      html body .projects .projects__content {
+        display: none; }
+      html body .projects .projects__content--active {
+        display: grid;
+        grid-template-columns: 90%;
+        column-gap: 3rem;
+        row-gap: .5rem;
+        justify-content: center;
+        border-radius: 2rem 0 2rem 2rem;
+        background-color: #fff; }
+      html body .projects .projects__list {
+        border-radius: 1rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        margin-right: 4rem;
+        margin-left: 4rem; }
+        html body .projects .projects__list:hover ellipse {
+          fill: #20c5ba; }
+        html body .projects .projects__list:hover path {
+          stroke: #fff; }
+        html body .projects .projects__list .projects__arrow-down {
+          float: left;
+          margin-top: .75rem;
+          cursor: pointer;
+          line-height: 50%; }
+        html body .projects .projects__list .projects__arrow-down--active object #document svg {
+          transform: rotate(180deg); }
+          html body .projects .projects__list .projects__arrow-down--active object #document svg ellipse {
+            fill: #20c5ba; }
+          html body .projects .projects__list .projects__arrow-down--active object #document svg path {
+            stroke: #fff; }
+      html body .projects .projects__list--active {
+        border: 1px solid #20c5ba;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 2rem 4rem 8rem 4rem; }
+      html body .projects .projects__feature {
+        display: grid;
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+        width: 90%;
+        margin-right: 5%;
+        cursor: default; }
+        html body .projects .projects__feature .projects__item {
+          background-color: #F6F8FB;
+          text-align: center;
+          border-radius: 1.6rem;
+          padding: 2rem;
+          align-items: center; }
+        html body .projects .projects__feature .projects__item-icon {
+          margin-top: 1rem; }
+        html body .projects .projects__feature .projects__item-title {
+          margin-bottom: 0;
+          margin-top: .5rem; }
+        html body .projects .projects__feature .projects__main-text {
+          margin-top: 0; }
+        html body .projects .projects__feature .projects__item-description {
+          background-color: #fff;
+          text-align: right;
+          border-radius: 1.6rem;
+          padding: 2rem;
+          align-items: center;
+          grid-column: 1 / span 4; }
+        html body .projects .projects__feature .projects__item-description-row {
+          display: flex; }
+        html body .projects .projects__feature .projects__item-description-icon {
+          margin: 0 2rem 0 2rem; }
+        html body .projects .projects__feature .projects__item-description-content {
+          margin: 0 2rem 0 2rem; }
+        html body .projects .projects__feature .projects__item-footer {
+          background-color: #fff;
+          text-align: right;
+          border-radius: 1.6rem;
+          padding: calc(2rem - 1px);
+          align-items: center;
+          grid-column: 1 / span 4;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          border: 1px solid #E7ECF4;
+          border-radius: 1rem; }
+        html body .projects .projects__feature .projects__item-git {
+          background-color: #fff;
+          text-align: right;
+          border-radius: 1.6rem;
+          padding: 0;
+          align-items: center;
+          display: flex; }
+          html body .projects .projects__feature .projects__item-git .projects__item-git-icon {
+            margin: 0 2rem 0 2rem; }
+          html body .projects .projects__feature .projects__item-git .projects__item-git-content {
+            margin: 0 2rem 0 2rem; }
+            html body .projects .projects__feature .projects__item-git .projects__item-git-content .project__item-git-url {
+              font-size: 1.6rem;
+              color: #6A7D9B; }
+        html body .projects .projects__feature .projects__item-author {
+          background-color: #fff;
+          text-align: left;
+          border-radius: 1.6rem;
+          padding: 2rem;
+          align-items: center;
+          direction: ltr; }
+        html body .projects .projects__feature .projects__author-specs {
+          border: 1px solid #D8E1EF;
+          border-radius: 1rem;
+          width: max-content;
+          padding: .5rem 2rem .5rem 2rem;
+          display: flex; }
+          html body .projects .projects__feature .projects__author-specs .projects__author-name {
+            margin-top: 1.25rem;
+            margin-right: .5rem; }
+          html body .projects .projects__feature .projects__author-specs .projects__author-image {
+            margin-top: .75rem; }
+      html body .projects .projects__feature--active {
+        visibility: visible;
+        max-height: max-content;
+        opacity: 1;
+        transition: opacity .5s ease-in; }
     html body .structure {
       background-color: #eef2f7;
-      height: 60vh;
+      min-height: 60vh;
       display: grid;
       grid-template-columns: 70%;
       grid-gap: 0;
@@ -43,7 +168,9 @@ html {
     html body .title4 {
       font-size: 1.6rem;
       color: #253343;
-      font-weight: bold; }
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 0; }
     html body .main-text {
       font-size: 1.6rem;
       color: #6A7D9B; }
@@ -53,12 +180,11 @@ html {
       padding-top: 0; }
     html body .description--center {
       text-align: center; }
-    html body .projects__content {
-      display: none; }
     html body .structure__content {
       display: none; }
     html body ul {
-      list-style: none; }
+      list-style: none;
+      padding: 0; }
       html body ul li::before {
         content: "\2022";
         color: #20c5ba;
@@ -68,88 +194,9 @@ html {
         font-size: 3.5rem;
         display: inline-block;
         vertical-align: middle; }
-    html body .content--active {
-      display: grid;
-      grid-template-columns: 80%;
-      column-gap: 3rem;
-      row-gap: .5rem;
-      justify-content: center;
-      background-color: #fff; }
-    html body .projects__feature {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 2rem;
-      width: 90%;
-      margin-right: 5%; }
-      html body .projects__feature .projects__item {
-        background-color: #F6F8FB;
-        text-align: center;
-        border-radius: 1.6rem;
-        padding: 2rem;
-        align-items: center; }
-      html body .projects__feature .projects__item-icon {
-        margin-top: 1rem; }
-      html body .projects__feature .projects__item-title {
-        margin-bottom: 0;
-        margin-top: .5rem; }
-      html body .projects__feature .projects__main-text {
-        margin-top: 0; }
-      html body .projects__feature .projects__description-item {
-        background-color: #fff;
-        text-align: right;
-        border-radius: 1.6rem;
-        padding: 2rem;
-        align-items: center;
-        grid-column: 1 / span 4; }
-      html body .projects__feature .projects__description-item-row {
-        display: flex; }
-      html body .projects__feature .projects__description-item-icon {
-        margin: 0 2rem 0 2rem; }
-      html body .projects__feature .projects__description-item-content {
-        margin: 0 2rem 0 2rem; }
-        html body .projects__feature .projects__description-item-content .projects__description-item-title {
-          margin-top: 0; }
-      html body .projects__feature .projects__item--footer {
-        background-color: #fff;
-        text-align: right;
-        border-radius: 1.6rem;
-        padding: 0.5rem;
-        align-items: center;
-        grid-column: 1 / span 4;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        border: 1px solid #E7ECF4;
-        border-radius: 1rem; }
-      html body .projects__feature .projects__item--git {
-        background-color: #fff;
-        text-align: right;
-        border-radius: 1.6rem;
-        padding: 2rem;
-        align-items: center; }
-      html body .projects__feature .projects__item--author {
-        background-color: #fff;
-        text-align: left;
-        border-radius: 1.6rem;
-        padding: 2rem;
-        align-items: center;
-        direction: ltr; }
-      html body .projects__feature .projects__author-specs {
-        border: 1px solid #D8E1EF;
-        border-radius: 1rem;
-        width: max-content;
-        padding: .5rem 2rem .5rem 2rem;
-        display: flex; }
-        html body .projects__feature .projects__author-specs .projects__author-name {
-          margin-top: 1.25rem;
-          margin-right: .5rem; }
-        html body .projects__feature .projects__author-specs .projects__author-image {
-          margin-top: .75rem; }
-    html body .arrow-down {
-      float: left;
-      margin-top: .75rem; }
     html body .register {
       background-color: #fff;
-      height: 70vh;
+      min-height: 70vh;
       display: grid;
       grid-template-columns: 50%;
       grid-gap: 0;
@@ -161,7 +208,7 @@ html {
         font-weight: bold; }
     html body .footer {
       background-color: inherit;
-      height: 35rem;
+      min-height: 35rem;
       display: grid;
       grid-template-columns: 60%;
       grid-gap: 0;

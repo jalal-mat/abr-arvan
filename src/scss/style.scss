@@ -20,7 +20,15 @@ html {
         margin: 0;
 
         .projects {
-            @include section(inherit, 100vh, 70%);
+            @include section(inherit, 100vh, 70%, start);
+
+            .projects__header {
+                margin-top: 8rem;
+            }
+
+            .projects__body {
+                margin-bottom: 12rem;
+            }
 
             .projects__tab {
                 background-color: $secondBorderLightGray;
@@ -28,18 +36,186 @@ html {
                 padding: 1.5rem 3rem 1.5rem 3rem;
                 margin-left: 1rem;
                 border-radius: 1.5rem 1.5rem 0 0;
+                cursor: pointer;
             }
 
             .tab--active {
                 background-color: $whiteColor;
             }
 
+            .projects__content {
+                display: none;
+            }
+
+            .projects__content--active {
+                display: grid;
+                grid-template-columns: 90%;
+                column-gap: 3rem;
+                row-gap: .5rem;
+                justify-content: center;
+                border-radius: 2rem 0 2rem 2rem;
+                background-color: $whiteColor;
+            }
+
+            .projects__list {
+                border-radius: 1rem;
+                cursor: pointer;
+                margin-bottom: 1rem;
+                margin-right: 4rem;
+                margin-left: 4rem;
+
+                &:hover {
+                    ellipse {
+                        fill: $mainGreen;
+                    }
+
+                    path {
+                        stroke: $whiteColor;
+                    }
+                }
+
+                .projects__arrow-down {
+                    float: left;
+                    margin-top: .75rem;
+                    cursor: pointer;
+                    line-height: 50%;
+                }
+
+                .projects__arrow-down--active {
+                    object {
+                        #document {
+                            svg {
+                                transform: rotate(180deg);
+
+                                ellipse {
+                                    fill: $mainGreen;
+                                }
+
+                                path {
+                                    stroke: $whiteColor;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .projects__list--active {
+                border: 1px solid $mainGreen;
+                margin-right: 0;
+                margin-left: 0;
+                padding: 2rem 4rem 8rem 4rem;
+            }
+
+            .projects__feature {
+                display: grid;
+                visibility: hidden;
+                max-height: 0;
+                opacity: 0;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 2rem;
+                width: 90%;
+                margin-right: 5%;
+                cursor: default;
+
+                .projects__item {
+                    @include projectFeatures($thirdLightColor, center);
+                }
+
+                .projects__item-icon {
+                    margin-top: 1rem;
+                }
+
+                .projects__item-title {
+                    margin-bottom: 0;
+                    margin-top: .5rem;
+                }
+
+                .projects__main-text {
+                    margin-top: 0;
+                }
+
+                .projects__item-description {
+                    @include projectFeatures($whiteColor, right);
+                    grid-column: 1 / span 4;
+                }
+
+                .projects__item-description-row {
+                    display: flex;
+                }
+
+                .projects__item-description-icon {
+                    margin: 0 2rem 0 2rem;
+                }
+
+                .projects__item-description-content {
+                    margin: 0 2rem 0 2rem;
+                }
+
+                .projects__item-footer {
+                    @include projectFeatures($whiteColor, right, calc(2rem - 1px));
+                    grid-column: 1 / span 4;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    border: 1px solid $secondBorderLightGray;
+                    border-radius: 1rem;
+                }
+
+                .projects__item-git {
+                    @include projectFeatures($whiteColor, right, 0);
+                    display: flex;
+
+                    .projects__item-git-icon {
+                        margin: 0 2rem 0 2rem;
+                    }
+
+                    .projects__item-git-content {
+                        margin: 0 2rem 0 2rem;
+
+                        .project__item-git-url {
+                            @include textStyle($fontSize16, $mainTextColor);
+                        }
+                    }
+                }
+
+                .projects__item-author {
+                    @include projectFeatures($whiteColor, left);
+                    direction: ltr;
+                }
+
+                .projects__author-specs {
+                    border: 1px solid $firstBorderLightGray;
+                    border-radius: 1rem;
+                    width: max-content;
+                    padding: .5rem 2rem .5rem 2rem;
+                    display: flex;
+
+                    .projects__author-name {
+                        margin-top: 1.25rem;
+                        margin-right: .5rem;
+                    }
+
+                    .projects__author-image {
+                        margin-top: .75rem;
+                    }
+                }
+
+
+            }
+
+            .projects__feature--active {
+                visibility: visible;
+                max-height: max-content;
+                opacity: 1;
+                transition: opacity .5s ease-in;
+            }
         }
 
 
 
         .structure {
-            @include section($secondLightColor, 60vh, 70%);
+            @include section($secondLightColor, 60vh, 70%, center);
         }
 
         .projects__container {}
@@ -54,6 +230,8 @@ html {
 
         .title4 {
             @include title($fontSize16, $mainDarkColor);
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
         .main-text {
@@ -72,9 +250,7 @@ html {
 
         .register__title {}
 
-        .projects__content {
-            display: none;
-        }
+
 
         .structure__content {
             display: none;
@@ -82,6 +258,7 @@ html {
 
         ul {
             list-style: none;
+            padding: 0;
 
             li::before {
                 content: "\2022";
@@ -95,105 +272,14 @@ html {
             }
         }
 
-        .content--active {
-            display: grid;
-            grid-template-columns: 80%;
-            column-gap: 3rem;
-            row-gap: .5rem;
-            justify-content: center;
-            background-color: $whiteColor;
-        }
-
-        .projects__feature {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 2rem;
-            width: 90%;
-            margin-right: 5%;
-
-            .projects__item {
-                @include projectFeatures($thirdLightColor, center);
-            }
-
-            .projects__item-icon {
-                margin-top: 1rem;
-            }
-
-            .projects__item-title {
-                margin-bottom: 0;
-                margin-top: .5rem;
-            }
-
-            .projects__main-text {
-                margin-top: 0;
-            }
-
-            .projects__description-item {
-                @include projectFeatures($whiteColor, right);
-                grid-column: 1 / span 4;
-            }
-
-            .projects__description-item-row {
-                display: flex;
-            }
-
-            .projects__description-item-icon {
-                margin: 0 2rem 0 2rem;
-            }
-
-            .projects__description-item-content {
-                margin: 0 2rem 0 2rem;
-
-                .projects__description-item-title {
-                    margin-top: 0;
-                }
-            }
-
-            .projects__item--footer {
-                @include projectFeatures($whiteColor, right, .5rem);
-                grid-column: 1 / span 4;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                border: 1px solid $secondBorderLightGray;
-                border-radius: 1rem;
-            }
-
-            .projects__item--git {
-                @include projectFeatures($whiteColor, right);
-            }
-
-            .projects__item--author {
-                @include projectFeatures($whiteColor, left);
-                direction: ltr;
-            }
-
-            .projects__author-specs {
-                border: 1px solid $firstBorderLightGray;
-                border-radius: 1rem;
-                width: max-content;
-                padding: .5rem 2rem .5rem 2rem;
-                display: flex;
-
-                .projects__author-name {
-                    margin-top: 1.25rem;
-                    margin-right: .5rem;
-                }
-
-                .projects__author-image {
-                    margin-top: .75rem;
-                }
-            }
 
 
-        }
 
-        .arrow-down {
-            float: left;
-            margin-top: .75rem;
-        }
+
+
 
         .register {
-            @include section($whiteColor, 70vh, 50%);
+            @include section($whiteColor, 70vh, 50%, center);
 
             .register__title {
                 @include title($title3Size, $forthDarkGreen);
@@ -201,7 +287,7 @@ html {
         }
 
         .footer {
-            @include section(inherit, 35rem, 60%);
+            @include section(inherit, 35rem, 60%, center);
 
             .footer__container {}
 

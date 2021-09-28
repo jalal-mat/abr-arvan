@@ -12,8 +12,8 @@ const switchTabs = function (e, section) {
     tabs.forEach(tab => tab.classList.remove('tab--active'));
     clicked.classList.add('tab--active');
 
-    tabContent.forEach(tc => tc.classList.remove('content--active'));
-    document.querySelector(`.${section}__content--${clicked.dataset.tab}`).classList.add('content--active');
+    tabContent.forEach(tc => tc.classList.remove('projects__content--active'));
+    document.querySelector(`.${section}__content--${clicked.dataset.tab}`).classList.add('projects__content--active');
 };
 
 export const addHandlerRender = function () {

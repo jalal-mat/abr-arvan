@@ -9,14 +9,14 @@
     color: $color;
 }
 
-@mixin section($bgColor, $height, $gridTemplateColumns) {
+@mixin section($bgColor, $height, $gridTemplateColumns, $align) {
     background-color: $bgColor;
-    height: $height;
+    min-height: $height;
     display: grid;
     grid-template-columns: $gridTemplateColumns;
     grid-gap: 0;
     justify-content: center;
-    align-content: center;
+    align-content: $align;
 }
 
 @mixin projectFeatures($bgColor, $textAlign, $padding: 2rem) {
