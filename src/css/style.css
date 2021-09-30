@@ -10,6 +10,9 @@ html {
     background-color: #f5f7fa;
     font-size: 1.6rem;
     margin: 0; }
+    html body button {
+      font-family: 'yekan';
+      cursor: pointer; }
     html body .projects {
       background-color: inherit;
       min-height: 100vh;
@@ -29,7 +32,7 @@ html {
         margin-left: 1rem;
         border-radius: 1.5rem 1.5rem 0 0;
         cursor: pointer; }
-      html body .projects .tab--active {
+      html body .projects .projects__tab--active {
         background-color: #fff; }
       html body .projects .projects__content {
         display: none; }
@@ -42,11 +45,12 @@ html {
         border-radius: 2rem 0 2rem 2rem;
         background-color: #fff; }
       html body .projects .projects__list {
-        border-radius: 1rem;
         cursor: pointer;
-        margin-bottom: 1rem;
-        margin-right: 4rem;
-        margin-left: 4rem; }
+        margin-bottom: 0;
+        border-bottom: 1px solid #D8E1EF;
+        border-radius: 0;
+        padding: 2rem 4rem 0rem 4rem;
+        transition: padding .5s ease, margin .5s ease; }
         html body .projects .projects__list:hover ellipse {
           fill: #20c5ba; }
         html body .projects .projects__list:hover path {
@@ -56,17 +60,13 @@ html {
           margin-top: .75rem;
           cursor: pointer;
           line-height: 50%; }
-        html body .projects .projects__list .projects__arrow-down--active object #document svg {
-          transform: rotate(180deg); }
-          html body .projects .projects__list .projects__arrow-down--active object #document svg ellipse {
-            fill: #20c5ba; }
-          html body .projects .projects__list .projects__arrow-down--active object #document svg path {
-            stroke: #fff; }
       html body .projects .projects__list--active {
         border: 1px solid #20c5ba;
+        border-radius: 1rem;
         margin-right: 0;
         margin-left: 0;
-        padding: 2rem 4rem 8rem 4rem; }
+        padding: 2rem 4rem 8rem 4rem;
+        transition: padding .5s ease, margin .5s ease; }
       html body .projects .projects__feature {
         display: grid;
         visibility: hidden;
@@ -76,7 +76,8 @@ html {
         grid-gap: 2rem;
         width: 90%;
         margin-right: 5%;
-        cursor: default; }
+        cursor: default;
+        transition: opacity .5s ease-in, max-height .5s ease; }
         html body .projects .projects__feature .projects__item {
           background-color: #F6F8FB;
           text-align: center;
@@ -150,15 +151,89 @@ html {
         visibility: visible;
         max-height: max-content;
         opacity: 1;
-        transition: opacity .5s ease-in; }
+        transition: opacity .5s ease-in, max-height .5s ease; }
     html body .structure {
       background-color: #eef2f7;
       min-height: 60vh;
       display: grid;
-      grid-template-columns: 70%;
+      grid-template-columns: 100%;
       grid-gap: 0;
       justify-content: center;
       align-content: center; }
+      html body .structure .structure__header {
+        width: 70%;
+        margin: auto;
+        margin-top: 5rem; }
+      html body .structure .structure__body {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: center;
+        grid-gap: 0; }
+        html body .structure .structure__body .structure__tabs {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          justify-self: center;
+          border-bottom: 1px solid #9DB0CB; }
+          html body .structure .structure__body .structure__tabs .structure__tabs-limiter {
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+            justify-self: center; }
+          html body .structure .structure__body .structure__tabs .structure__tab-container {
+            position: relative;
+            max-width: max-content; }
+          html body .structure .structure__body .structure__tabs .structure__tab {
+            font-size: 1.8rem;
+            color: #9DB0CB;
+            background-color: inherit;
+            border: none;
+            padding: 1rem 0 1rem 0; }
+          html body .structure .structure__body .structure__tabs .structure__tab--active {
+            border-bottom: 3px solid #20c5ba;
+            color: #042623; }
+          html body .structure .structure__body .structure__tabs .structure__tab-triangle {
+            position: absolute;
+            bottom: -6rem;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: none; }
+          html body .structure .structure__body .structure__tabs .structure__tab-triangle--active {
+            display: block; }
+        html body .structure .structure__body .structure__content-container {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          justify-self: center; }
+          html body .structure .structure__body .structure__content-container .structure__content-limiter {
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+            justify-self: center; }
+          html body .structure .structure__body .structure__content-container .structure__content {
+            display: none;
+            margin-top: 4rem;
+            margin-bottom: 10rem;
+            border: 0.3rem solid #20c5ba;
+            border-radius: 1rem;
+            padding: 2rem;
+            background-color: #fff;
+            width: 100%; }
+            html body .structure .structure__body .structure__content-container .structure__content .structure__title {
+              font-size: 2.4rem;
+              color: #0e7571;
+              font-weight: bold; }
+            html body .structure .structure__body .structure__content-container .structure__content .structure__content-text {
+              font-size: 1.8rem;
+              color: #697D9A; }
+            html body .structure .structure__body .structure__content-container .structure__content .structure__attendees {
+              font-size: 1.8rem;
+              color: #20c5ba;
+              font-weight: bold; }
+          html body .structure .structure__body .structure__content-container .structure__content--active {
+            display: block; }
     html body .title1 {
       font-size: 4rem;
       color: #0b3a42;
@@ -180,8 +255,6 @@ html {
       padding-top: 0; }
     html body .description--center {
       text-align: center; }
-    html body .structure__content {
-      display: none; }
     html body ul {
       list-style: none;
       padding: 0; }

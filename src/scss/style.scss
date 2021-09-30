@@ -19,6 +19,11 @@ html {
         font-size: $generalFontSize;
         margin: 0;
 
+        button {
+            font-family: 'yekan';
+            cursor: pointer;
+        }
+
         .projects {
             @include section(inherit, 100vh, 70%, start);
 
@@ -39,7 +44,7 @@ html {
                 cursor: pointer;
             }
 
-            .tab--active {
+            .projects__tab--active {
                 background-color: $whiteColor;
             }
 
@@ -58,11 +63,12 @@ html {
             }
 
             .projects__list {
-                border-radius: 1rem;
                 cursor: pointer;
-                margin-bottom: 1rem;
-                margin-right: 4rem;
-                margin-left: 4rem;
+                margin-bottom: 0;
+                border-bottom: 1px solid $firstBorderLightGray;
+                border-radius: 0;
+                padding: 2rem 4rem 0rem 4rem;
+                transition: padding .5s ease, margin .5s ease;
 
                 &:hover {
                     ellipse {
@@ -80,32 +86,15 @@ html {
                     cursor: pointer;
                     line-height: 50%;
                 }
-
-                .projects__arrow-down--active {
-                    object {
-                        #document {
-                            svg {
-                                transform: rotate(180deg);
-
-                                ellipse {
-                                    fill: $mainGreen;
-                                }
-
-                                path {
-                                    stroke: $whiteColor;
-                                }
-
-                            }
-                        }
-                    }
-                }
             }
 
             .projects__list--active {
                 border: 1px solid $mainGreen;
+                border-radius: 1rem;
                 margin-right: 0;
                 margin-left: 0;
                 padding: 2rem 4rem 8rem 4rem;
+                transition: padding .5s ease, margin .5s ease;
             }
 
             .projects__feature {
@@ -118,6 +107,7 @@ html {
                 width: 90%;
                 margin-right: 5%;
                 cursor: default;
+                transition: opacity .5s ease-in, max-height .5s ease;
 
                 .projects__item {
                     @include projectFeatures($thirdLightColor, center);
@@ -208,14 +198,102 @@ html {
                 visibility: visible;
                 max-height: max-content;
                 opacity: 1;
-                transition: opacity .5s ease-in;
+                transition: opacity .5s ease-in, max-height .5s ease;
             }
         }
 
 
 
         .structure {
-            @include section($secondLightColor, 60vh, 70%, center);
+            @include section($secondLightColor, 60vh, 100%, center);
+
+            .structure__header {
+                width: 70%;
+                margin: auto;
+                margin-top: 5rem
+            }
+
+            .structure__body {
+                @include displayGrid(100%, center);
+
+                .structure__tabs {
+                    @include displayFlex(100%, center, center);
+                    border-bottom: 1px solid $structureTabText;
+
+                    .structure__tabs-limiter {
+                        @include displayFlex(50%, space-between, center);
+                    }
+
+                    .structure__tab-container {
+                        position: relative;
+                        max-width: max-content;
+                    }
+
+                    .structure__tab {
+                        @include textStyle($fontSize18, $structureTabText);
+                        background-color: inherit;
+                        border: none;
+                        padding: 1rem 0 1rem 0;
+                    }
+
+                    .structure__tab--active {
+                        border-bottom: 3px solid $mainGreen;
+                        color: $forthDarkGreen;
+                    }
+
+                    .structure__tab-triangle {
+                        position: absolute;
+                        bottom: -6rem;
+                        left: 0;
+                        right: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: none;
+                    }
+
+                    .structure__tab-triangle--active {
+                        display: block;
+                    }
+                }
+
+                .structure__content-container {
+                    // @include displayGrid(70%, center);
+                    @include displayFlex(100%, center, center);
+
+                    .structure__content-limiter {
+                        @include displayFlex(50%, space-between, center);
+                    }
+
+                    .structure__content {
+                        display: none;
+                        margin-top: 4rem;
+                        margin-bottom: 10rem;
+                        border: .3rem solid $mainGreen;
+                        border-radius: 1rem;
+                        padding: 2rem;
+                        background-color: $whiteColor;
+                        width: 100%;
+
+                        .structure__title {
+                            @include title($title2Size, $thirdDarkGreen);
+                        }
+
+                        .structure__content-text {
+                            @include textStyle($fontSize18, $structureContentText);
+                        }
+
+                        .structure__attendees {
+                            @include title($fontSize18, $mainGreen);
+                        }
+                    }
+
+                    .structure__content--active {
+                        display: block;
+                    }
+                }
+
+
+            }
         }
 
         .projects__container {}
@@ -249,12 +327,6 @@ html {
         }
 
         .register__title {}
-
-
-
-        .structure__content {
-            display: none;
-        }
 
         ul {
             list-style: none;

@@ -26,3 +26,17 @@
     padding: $padding;
     align-items: center;
 }
+
+@mixin displayGrid($columns, $justify, $gap: 0) {
+    display: grid;
+    grid-template-columns: $columns;
+    justify-content: $justify;
+    grid-gap: $gap;
+}
+
+@mixin displayFlex($width, $justifyContent, $justifySelf) {
+    display: flex;
+    width: $width;
+    justify-content: $justifyContent;
+    justify-self: $justifySelf;
+}
