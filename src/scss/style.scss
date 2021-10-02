@@ -218,7 +218,7 @@ html {
 
                 .structure__tabs {
                     @include displayFlex(100%, center, center);
-                    border-bottom: 1px solid $structureTabText;
+                    border-bottom: 1px solid $secondTextColor;
 
                     .structure__tabs-limiter {
                         @include displayFlex(50%, space-between, center);
@@ -230,7 +230,7 @@ html {
                     }
 
                     .structure__tab {
-                        @include textStyle($fontSize18, $structureTabText);
+                        @include textStyle($fontSize18, $secondTextColor);
                         background-color: inherit;
                         border: none;
                         padding: 1rem 0 1rem 0;
@@ -326,8 +326,6 @@ html {
             text-align: center;
         }
 
-        .register__title {}
-
         ul {
             list-style: none;
             padding: 0;
@@ -354,7 +352,154 @@ html {
             @include section($whiteColor, 70vh, 50%, center);
 
             .register__title {
-                @include title($title3Size, $forthDarkGreen);
+                @include title($title2Size, $forthDarkGreen);
+            }
+
+            .register__form-part {
+                background-color: $mainBackgroundColor;
+                padding: 0.5rem 0 2.5rem 0;
+                margin-bottom: 2.4rem;
+                border-radius: 1.6rem;
+
+                .register__form-title {
+                    @include title($title3Size, $secondDarkGreen);
+
+                    .register__form-title-icon {
+                        float: right;
+                        margin-left: 2rem;
+                    }
+                }
+
+                .register__inputs-part {
+                    display: grid;
+                    grid-template-columns: 1fr 4fr 1fr 4fr;
+                    row-gap: 2rem;
+                    padding: 3rem;
+
+                    input {
+                        width: 90%;
+                        border: 0.2rem solid $inputBorder;
+                        background-color: $whiteColor;
+                        border-radius: 1.2rem;
+                        padding: .5rem 1.5rem;
+                        font-family: 'yekan';
+                        color: $secondTextColor;
+                        justify-self: start;
+                        font-size: $fontSize16;
+
+                        &::placeholder {
+                            color: $secondTextColor;
+                        }
+
+
+                        &:focus-visible {
+                            outline: none;
+                        }
+                    }
+
+                    .register__label {
+                        @include lableStyle;
+                    }
+
+                    .register__label--required {
+                        @include lableStyle;
+
+                        &:after {
+                            content: ' *';
+                            color: $mainGreen;
+                        }
+                    }
+
+
+                    .register__upload-container--active {
+                        border: .2rem solid $mainGreen;
+                        border-radius: 1.6rem;
+
+                        input {
+                            color: $mainGreen;
+                        }
+
+                        .register__btn--upload {
+                            background-color: $mainGreen;
+                            color: $whiteColor;
+                        }
+                    }
+
+                    .register__upload-container {
+                        width: 100%;
+                        background-color: $whiteColor;
+                        border-radius: 1.6rem;
+                        float: right;
+                        border: 0.2rem solid $inputBorder;
+
+                        input {
+                            width: auto;
+                            float: right;
+                            border: 0;
+                        }
+
+                        .register__btn--upload {
+                            width: auto;
+                            border-radius: 1.2rem;
+                            background-color: $secondLightColor;
+                            border: $inputBorder;
+                            font-size: $fontSize16;
+                            padding: .5rem 1rem;
+                            float: left;
+                            color: $secondTextColor;
+                        }
+
+                        &:hover {
+                            @extend .register__upload-container--active;
+                        }
+                    }
+
+
+                    .register__upload-hint {
+                        color: $secondTextColor;
+                        align-self: start;
+                        justify-self: end;
+                        margin-top: -1.8rem;
+                    }
+
+                    .register__upload-hint--1 {
+                        @extend .register__upload-hint;
+                        grid-column: 1 / span 2;
+                    }
+
+                    .register__upload-hint--2 {
+                        @extend .register__upload-hint;
+                        grid-column: 3 / span 4;
+                    }
+
+                    .register__select {
+                        @extend input;
+                    }
+
+
+                }
+
+
+            }
+
+            .register__footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .register__tip {
+                    color: $mainGreen;
+                }
+
+                .register__btn--submit {
+                    width: 180px;
+                    font-size: $fontSize16;
+                    height: max-content;
+                    color: $secondTextColor;
+                    border: $registerBorder;
+                    border-radius: 1.2rem;
+                    padding: .75rem;
+                }
             }
         }
 

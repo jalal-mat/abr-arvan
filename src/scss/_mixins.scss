@@ -40,3 +40,10 @@
     justify-content: $justifyContent;
     justify-self: $justifySelf;
 }
+
+@mixin lableStyle {
+    justify-self: start;
+    padding-right: 3rem;
+    align-self: center;
+    color: $thirdTextColor;
+}

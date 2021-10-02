@@ -276,9 +276,103 @@ html {
       justify-content: center;
       align-content: center; }
       html body .register .register__title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         color: #042623;
         font-weight: bold; }
+      html body .register .register__form-part {
+        background-color: #f5f7fa;
+        padding: 0.5rem 0 2.5rem 0;
+        margin-bottom: 2.4rem;
+        border-radius: 1.6rem; }
+        html body .register .register__form-part .register__form-title {
+          font-size: 2.2rem;
+          color: #155a6d;
+          font-weight: bold; }
+          html body .register .register__form-part .register__form-title .register__form-title-icon {
+            float: right;
+            margin-left: 2rem; }
+        html body .register .register__form-part .register__inputs-part {
+          display: grid;
+          grid-template-columns: 1fr 4fr 1fr 4fr;
+          row-gap: 2rem;
+          padding: 3rem; }
+          html body .register .register__form-part .register__inputs-part input, html body .register .register__form-part .register__inputs-part .register__select {
+            width: 90%;
+            border: 0.2rem solid #DBE4F2;
+            background-color: #fff;
+            border-radius: 1.2rem;
+            padding: .5rem 1.5rem;
+            font-family: 'yekan';
+            color: #9DB0CB;
+            justify-self: start;
+            font-size: 1.6rem; }
+            html body .register .register__form-part .register__inputs-part input::placeholder, html body .register .register__form-part .register__inputs-part .register__select::placeholder {
+              color: #9DB0CB; }
+            html body .register .register__form-part .register__inputs-part input:focus-visible, html body .register .register__form-part .register__inputs-part .register__select:focus-visible {
+              outline: none; }
+          html body .register .register__form-part .register__inputs-part .register__label {
+            justify-self: start;
+            padding-right: 3rem;
+            align-self: center;
+            color: #585858; }
+          html body .register .register__form-part .register__inputs-part .register__label--required {
+            justify-self: start;
+            padding-right: 3rem;
+            align-self: center;
+            color: #585858; }
+            html body .register .register__form-part .register__inputs-part .register__label--required:after {
+              content: ' *';
+              color: #20c5ba; }
+          html body .register .register__form-part .register__inputs-part .register__upload-container--active, html body .register .register__form-part .register__inputs-part .register__upload-container:hover {
+            border: 0.2rem solid #20c5ba;
+            border-radius: 1.6rem; }
+            html body .register .register__form-part .register__inputs-part .register__upload-container--active input, html body .register .register__form-part .register__inputs-part .register__upload-container:hover input, html body .register .register__form-part .register__inputs-part .register__upload-container--active .register__select, html body .register .register__form-part .register__inputs-part .register__upload-container:hover .register__select {
+              color: #20c5ba; }
+            html body .register .register__form-part .register__inputs-part .register__upload-container--active .register__btn--upload, html body .register .register__form-part .register__inputs-part .register__upload-container:hover .register__btn--upload {
+              background-color: #20c5ba;
+              color: #fff; }
+          html body .register .register__form-part .register__inputs-part .register__upload-container {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 1.6rem;
+            float: right;
+            border: 0.2rem solid #DBE4F2; }
+            html body .register .register__form-part .register__inputs-part .register__upload-container input, html body .register .register__form-part .register__inputs-part .register__upload-container .register__select {
+              width: auto;
+              float: right;
+              border: 0; }
+            html body .register .register__form-part .register__inputs-part .register__upload-container .register__btn--upload {
+              width: auto;
+              border-radius: 1.2rem;
+              background-color: #eef2f7;
+              border: #DBE4F2;
+              font-size: 1.6rem;
+              padding: .5rem 1rem;
+              float: left;
+              color: #9DB0CB; }
+          html body .register .register__form-part .register__inputs-part .register__upload-hint, html body .register .register__form-part .register__inputs-part .register__upload-hint--1, html body .register .register__form-part .register__inputs-part .register__upload-hint--2 {
+            color: #9DB0CB;
+            align-self: start;
+            justify-self: end;
+            margin-top: -1.8rem; }
+          html body .register .register__form-part .register__inputs-part .register__upload-hint--1 {
+            grid-column: 1 / span 2; }
+          html body .register .register__form-part .register__inputs-part .register__upload-hint--2 {
+            grid-column: 3 / span 4; }
+      html body .register .register__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        html body .register .register__footer .register__tip {
+          color: #20c5ba; }
+        html body .register .register__footer .register__btn--submit {
+          width: 180px;
+          font-size: 1.6rem;
+          height: max-content;
+          color: #9DB0CB;
+          border: #F3F3F3;
+          border-radius: 1.2rem;
+          padding: .75rem; }
     html body .footer {
       background-color: inherit;
       min-height: 35rem;
