@@ -4,7 +4,8 @@
   "description": "project of abr-e-arvan",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass src/scss/style.scss src/css/style.css -w"
+    "compile:sass": "node-sass src/scss/style.scss src/css/style.css -w",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "node-sass": "^6.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.56.1",
+    "webpack-cli": "^4.8.0"
   }
 }
