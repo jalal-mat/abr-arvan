@@ -90,7 +90,7 @@
                 در صورتی که مایل باشید می‌توانید از اینجا برای ما رزومه بفرستید، لطفا فرم زیر را پر کنید.
             </p>
         </div>
-        <form class="register__form">
+        <form class="register__form" method="POST" action="https://coda.io/apis/v1">
             <div class="register__form-part">
                 <h2 class="register__form-title">
                     <object class="register__form-title-icon" data="./assets/svg/form-title-icon.svg"
@@ -117,21 +117,27 @@
                         type="image/svg+xml"></object>
                     سوابق و تجربیات
                 </h2>
-                <div class="register__inputs-part">
-                    <label for="resume" class="register__label--required">رزومه</label>
-                    <div class="register__upload-container">
-                        <input type="text" required />
-                        <button class="register__btn--upload" id="resume">انتخاب فایل pdf</button>
+                <div class="register__inputs-part" id="reg">
+                    <label for="resume_input" class="register__label--required">رزومه</label>
+                    <div class="register__upload-container" data-hint="1">
+                        <input type="text" id="resume_input" class="register__file-input" required />
+                        <!-- <button type="file" class="register__btn--upload">انتخاب فایل pdf</button> -->
+                        <input id='resume_file_button' type='file' hidden />
+                        <input id='resume_upload_button' type='button' value='انتخاب فایل pdf'
+                            class="register__btn--upload" />
                     </div>
 
-                    <label for="portofolio" class="register__label">پورتفولیو</label>
-                    <div class="register__upload-container">
-                        <input type="text" id="portofolio" />
-                        <button class="register__btn--upload">انتخاب فایل pdf</button>
+                    <label for="portofolio_input" class="register__label">پورتفولیو</label>
+                    <div class="register__upload-container" data-hint="2">
+                        <input type="text" id="portofolio_input" class="register__file-input" placeholder="اختیاری" />
+                        <!-- <button type="file" class="register__btn--upload">انتخاب فایل pdf</button> -->
+                        <input id='portofolio_file_button' type='file' hidden />
+                        <input id='portofolio_upload_button' type='button' value='انتخاب فایل pdf'
+                            class="register__btn--upload" />
                     </div>
 
-                    <span class="register__upload-hint--1">حداکثر حجم مجاز 1 مگابایت باشد</span>
-                    <span class="register__upload-hint--2">حداکثر حجم مجاز 1 مگابایت باشد</span>
+                    <span class="register__upload-hint--1">حداکثر حجم مجاز 1 مگابایت می‌باشد</span>
+                    <span class="register__upload-hint--2">حداکثر حجم مجاز 1 مگابایت می‌باشد</span>
                 </div>
             </div>
             <div class="register__form-part">
@@ -141,29 +147,67 @@
                     توضیحات تکمیلی
                 </h2>
                 <div class="register__inputs-part">
-                    <label for="abr_kind">نوع ابریار</label>
+                    <label for="abr_kind" class="register__label">نوع ابریار</label>
                     <select name="abr_kind" id="abr_kind" class="register__select">
+                        <option value="">نوع ابریار</option>
                         <option value="">ابریار کوچ ابری</option>
-                        <option value="">ابریار کوچ ابری</option>
-                        <option value="">ابریار کوچ ابری</option>
+                        <option value="">ابریار فنی</option>
+                        <option value="">ابریار بازارچه</option>
+                        <option value="">ابریار آموزش</option>
+                        <option value="">ابریار فروش</option>
                     </select>
-                    <label for="abr_level">سطح ابریار</label>
+                    <label for="abr_level" class="register__label">سطح ابریار</label>
                     <select name="abr_level" id="abr_level" class="register__select">
+                        <option value="">سطح ابریار</option>
                         <option value="">سطح 1</option>
-                        <option value="">سطح 1</option>
-                        <option value="">سطح 1</option>
+                        <option value="">سطح 2</option>
+                        <option value="">سطح 3</option>
+                        <option value="">سطح 4</option>
                     </select>
+                    <textarea name="" id="" cols="30" rows="6"
+                        placeholder="در صورت نیاز به توضیحات تکمیلی لطفا در این باکس برای ما یادداشت بگذارید"
+                        class="register__text-area"></textarea>
                 </div>
             </div>
             <div class="register__footer">
                 <p class="register__tip">* پر کردن فیلدهایی که با ستاره مشخص شده ضروری است</p>
-                <button type="submit" class="register__btn--submit">ثبت نام</button>
+                <button type="submit" id="register_btn" class="register__btn--submit" disabled="true">ثبت نام</button>
             </div>
         </form>
     </section>
     <footer class="footer">
         <h1 class="footer__title">پروژه‌های موفق</h1>
-        <div class="footer__slider"></div>
+        <div class="footer__slider">
+            <div class="footer__slides-container">
+                <div class="footer__slide">
+                    <object data="./assets/svg/pasargad.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/success-logo2.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/pasargad.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/success-logo3.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/success-logo4.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/success-logo2.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="footer__slide">
+                    <object data="./assets/svg/success-logo4.svg" type="image/svg+xml"></object>
+                </div>
+            </div>
+            <div class="footer__arrow-left">
+                <object data="./assets/svg/arrow-left.svg" type="image/svg+xml"></object>
+            </div>
+            <div class="footer__arrow-right">
+                <object data="./assets/svg/arrow-right.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
     </footer>
 </body>
 

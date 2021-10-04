@@ -4,9 +4,10 @@
     font-weight: bold;
 }
 
-@mixin textStyle($fontSize, $color) {
+@mixin textStyle($fontSize, $color, $fontFamily: 'yekan') {
     font-size: $fontSize;
     color: $color;
+    font-family: $fontFamily;
 }
 
 @mixin section($bgColor, $height, $gridTemplateColumns, $align) {
@@ -27,6 +28,13 @@
     align-items: center;
 }
 
+@mixin projectsShowHide($visibility, $maxHeight, $opacity) {
+    visibility: $visibility;
+    max-height: $maxHeight;
+    opacity: $opacity;
+    transition: opacity .5s ease-in, max-height .5s ease;
+}
+
 @mixin displayGrid($columns, $justify, $gap: 0) {
     display: grid;
     grid-template-columns: $columns;
@@ -34,16 +42,31 @@
     grid-gap: $gap;
 }
 
-@mixin displayFlex($width, $justifyContent, $justifySelf) {
+@mixin displayFlex($width, $justifyContent) {
     display: flex;
     width: $width;
     justify-content: $justifyContent;
-    justify-self: $justifySelf;
 }
 
 @mixin lableStyle {
     justify-self: start;
-    padding-right: 3rem;
+    padding-right: 1.5rem;
     align-self: center;
     color: $thirdTextColor;
+}
+
+@mixin sliderArrow {
+    position: absolute;
+    top: 30%;
+    cursor: pointer;
+}
+
+@mixin borderStyle($border, $radius) {
+    border: $border;
+    border-radius: $radius;
+}
+
+@mixin widthAndBgColor($width, $bgColor) {
+    width: $width;
+    background-color: $bgColor;
 }

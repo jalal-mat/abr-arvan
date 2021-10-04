@@ -1,0 +1,7 @@
+path {
+    fill: #9db0cb;
+}
+
+svg:hover path {
+    fill: #1abbb0;
+}
