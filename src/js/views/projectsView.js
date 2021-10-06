@@ -73,8 +73,10 @@ export const renderProjectsLists = function (projects) {
                             <div class="projects__item-git-icon">
                                 <object data="./assets/svg/git-url.svg" type="image/svg+xml"></object>
                             </div>
-                            <div class="projects__item-git-content">
+                            <div class="projects__item-git-title">
                                 <h4 class="title4">صفحه گیت هاب</h4>
+                            </div>
+                            <div class="projects__item-git-content">
                                 <a class="project__item-git-url"
                                     href="https://github.com/features/codespaces"
                                     target="_blank">${project.gitUrl}</a>
@@ -92,7 +94,7 @@ export const renderProjectsLists = function (projects) {
                             </div>
                         </div>
                     </div>
-
+                    <button class="projects__item-btn">ارسال پیشنهاد</button>
                 </div>
             </li>`;
 

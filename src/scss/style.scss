@@ -78,7 +78,7 @@ ul {
     @include section(inherit, 100vh, 70%, start);
 
     @include xs {
-        grid-template-columns: 95%;
+        grid-template-columns: 90%;
     }
 }
 
@@ -96,6 +96,10 @@ ul {
 
 .projects__body {
     margin-bottom: 13rem;
+
+    @include xs {
+        margin-bottom: 10rem;
+    }
 }
 
 .projects__tabs-container {
@@ -117,20 +121,42 @@ ul {
     padding: 1.5rem 3rem 1.5rem 3rem;
     margin-left: 1rem;
     cursor: pointer;
+
+    @include xs {
+        background-color: $inactiveGreen;
+        border-radius: 1.5rem;
+        color: $secondGreen;
+        white-space: nowrap;
+        min-width: max-content;
+        width: 100%;
+    }
 }
 
 .projects__tab--active {
     background-color: $whiteColor;
+
+    @include xs {
+        color: $whiteColor;
+        background-color: $secondGreen;
+    }
 }
 
 .projects__content {
     display: none;
+
+    @include xs {
+        margin-top: 2rem;
+    }
 }
 
 .projects__content--active {
     @include displayGrid(90%, center, .5rem 3rem);
     border-radius: 2rem 0 2rem 2rem;
     background-color: $whiteColor;
+
+    @include xs {
+        grid-template-columns: 100%;
+    }
 }
 
 .projects__list {
@@ -148,6 +174,16 @@ ul {
     margin-left: 0;
     padding: 2rem 4rem 8rem 4rem;
     transition: padding .5s ease, margin .5s ease;
+
+    @include xs {
+        padding: 2rem 4rem 2rem 4rem;
+    }
+}
+
+.projects__list-container {
+    @include xs {
+        margin-top: 0;
+    }
 }
 
 .projects__arrow-down {
@@ -230,19 +266,45 @@ ul {
     @include displayGrid(repeat(2, 1fr), center);
     @include borderStyle(.1rem solid $secondBorderLightGray, 1rem);
     grid-column: 1 / span 4;
+
+    @include xs {
+        grid-template-columns: 1fr;
+    }
 }
 
 .projects__item-git {
     @include projectFeatures($whiteColor, right, 0);
-    display: flex;
+    @include displayGrid(auto auto, right, 0);
+
+    @include xs {
+        grid-template-columns: .25fr auto;
+    }
 }
 
 .projects__item-git-icon {
     margin: 0 2rem 0 2rem;
+
+    @include xs {
+        margin: 0;
+    }
+}
+
+.projects__item-git-title {
+    align-self: baseline;
+
+    @include xs {
+        align-self: center;
+    }
 }
 
 .projects__item-git-content {
-    margin: 0 2rem 0 2rem;
+    grid-column: 2;
+    margin: -3rem 0 0 2rem;
+
+    @include xs {
+        grid-column: 1 / span 2;
+        margin: 0;
+    }
 }
 
 .project__item-git-url {
@@ -252,6 +314,10 @@ ul {
 .projects__item-author {
     @include projectFeatures($whiteColor, left);
     direction: ltr;
+
+    @include xs {
+        display: none;
+    }
 }
 
 .projects__author-specs {
@@ -267,6 +333,20 @@ ul {
 
 .projects__author-image {
     margin-top: .75rem;
+}
+
+.projects__item-btn {
+    display: none;
+
+    @include xs {
+        display: block;
+        color: $whiteColor;
+        @include borderStyle(0, 1rem);
+        @include widthAndBgColor(100%, $secondGreen);
+        grid-column: 1/span 4;
+        justify-self: center;
+        padding: 1rem 0;
+    }
 }
 
 
