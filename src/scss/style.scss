@@ -63,10 +63,6 @@ ul {
     @include title($title1Size, $mainDarkGreen);
 }
 
-.title1--center {
-    text-align: center;
-}
-
 .title4 {
     @include title($fontSize16, $mainDarkColor);
     margin-top: 0;
@@ -79,6 +75,18 @@ ul {
 
 .projects {
     @include section(inherit, 100vh, 70%, start);
+
+    @include xs {
+        grid-template-columns: 95%;
+    }
+}
+
+.projects__title {
+    text-align: center;
+
+    @include xs {
+        text-align: right;
+    }
 }
 
 .projects__header {
@@ -319,8 +327,12 @@ ul {
     padding-top: 0;
 }
 
-.description--center {
+.projects__description {
     text-align: center;
+
+    @include xs {
+        text-align: right;
+    }
 }
 
 .register {

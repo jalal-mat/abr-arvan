@@ -49,9 +49,6 @@ ul {
   color: #0b3a42;
   font-weight: bold; }
 
-.title1--center {
-  text-align: center; }
-
 .title4 {
   font-size: 1.6rem;
   color: #253343;
@@ -72,6 +69,15 @@ ul {
   grid-gap: 0;
   justify-content: center;
   align-content: start; }
+  @media only screen and (max-width: 575.99px) {
+    .projects {
+      grid-template-columns: 95%; } }
+
+.projects__title {
+  text-align: center; }
+  @media only screen and (max-width: 575.99px) {
+    .projects__title {
+      text-align: right; } }
 
 .projects__header {
   margin-top: 8rem; }
@@ -335,8 +341,11 @@ ul {
   font-family: "yekan";
   padding-top: 0; }
 
-.description--center {
+.projects__description {
   text-align: center; }
+  @media only screen and (max-width: 575.99px) {
+    .projects__description {
+      text-align: right; } }
 
 .register {
   background-color: #fff;
