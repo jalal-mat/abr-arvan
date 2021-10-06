@@ -98,7 +98,7 @@ ul {
     margin-bottom: 13rem;
 
     @include xs {
-        margin-bottom: 10rem;
+        margin-bottom: 8rem;
     }
 }
 
@@ -357,7 +357,17 @@ ul {
 .structure__header {
     width: 70%;
     margin: auto;
-    margin-top: 11rem
+    margin-top: 11rem;
+
+    @include xs {
+        width: 90%;
+    }
+}
+
+.structure__title1 {
+    @include xs {
+        margin-bottom: 2rem;
+    }
 }
 
 .structure__body {
@@ -371,6 +381,10 @@ ul {
 
 .structure__tabs-limiter {
     @include displayFlex(50%, space-between);
+
+    @include xs {
+        width: 100%;
+    }
 }
 
 .structure__tab-container {
@@ -402,6 +416,10 @@ ul {
 
 .structure__tab-triangle--active {
     display: block;
+
+    @include xs {
+        display: none;
+    }
 }
 
 .structure__content-container {
@@ -436,6 +454,12 @@ ul {
 
 .structure__content--active {
     display: block;
+}
+
+.structure__description {
+    @include xs {
+        margin-top: 0;
+    }
 }
 
 .description {
