@@ -19,6 +19,7 @@ body {
     background-color: $mainBackgroundColor;
     font-size: $fontSize16;
     margin: 0;
+    overflow-x: hidden;
 }
 
 button {
@@ -97,6 +98,19 @@ ul {
     margin-bottom: 13rem;
 }
 
+.projects__tabs-container {
+    display: flex;
+
+    @include xs {
+        width: 100%;
+        justify-content: space-between;
+
+        object {
+            display: none;
+        }
+    }
+}
+
 .projects__tab {
     @include borderStyle(0, 1.5rem 1.5rem 0 0);
     background-color: $secondBorderLightGray;
@@ -149,6 +163,10 @@ ul {
     width: 90%;
     margin-right: 5%;
     cursor: default;
+
+    @include xs {
+        grid-template-columns: 1fr;
+    }
 }
 
 .projects__feature--active {
@@ -157,6 +175,11 @@ ul {
 
 .projects__item {
     @include projectFeatures($thirdLightColor, center);
+
+    @include xs {
+        grid-column: 1;
+        width: 100%;
+    }
 }
 
 .projects__item-icon {
@@ -178,15 +201,28 @@ ul {
 }
 
 .projects__item-description-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
 .projects__item-description-icon {
     margin: 0 2rem 0 2rem;
+
+    @include xs {
+        margin: 0 0 0 2rem;
+    }
+}
+
+.projects__item-description-title {
+    align-self: center;
 }
 
 .projects__item-description-content {
-    margin: 0 2rem 0 2rem;
+    grid-column: 2 / span 1;
+
+    @include xs {
+        grid-column: 1 / span 2;
+    }
 }
 
 .projects__item-footer {

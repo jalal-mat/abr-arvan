@@ -50,8 +50,10 @@ export const renderProjectsLists = function (projects) {
                                 <object data="./assets/svg/project-description.svg"
                                     type="image/svg+xml"></object>
                             </div>
-                            <div class="projects__item-description-content">
+                            <div class="projects__item-discription-title">
                                 <h4 class="title4">شرح پروژه</h4>
+                            </div>
+                            <div class="projects__item-description-content">
                                 <ul>
                                     <li>نرم افزاری برای انتقال یک دامنه به همراه تنظیمات آن از روی کلودفلر
                                         به
