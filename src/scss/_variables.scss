@@ -1,15 +1,14 @@
-$mainGreen: #20c5ba;
-$secondGreen: #00baba;
-$thirdGreen: #1abbb0;
-$forthGreen: #1fc5b9;
-$fifthGreen: #009191;
-$inactiveGreen: #DCF1F4;
+$greens: (normal: (main: #20c5ba,
+        second: #00baba,
+        third: #009191),
 
-$mainDarkGreen: #0b3a42;
-$secondDarkGreen: #155a6d;
-$thirdDarkGreen: #0e7571;
-$forthDarkGreen: #042623;
-$fifthDarkGreen: #033432;
+    light:(main: #DCF1F4),
+
+    dark:(main: #0b3a42,
+        second: #155a6d,
+        third: #0e7571,
+        forth: #042623),
+);
 
 $mainBackgroundColor: #f5f7fa;
 $secondLightColor: #eef2f7;
@@ -33,11 +32,39 @@ $registerBorder: #F3F3F3;
 
 $errorColor: #F77D7D;
 
-$title1Size: 4rem;
-$title2Size: 2.4rem;
-$title3Size: 2.2rem;
-$fontSize19: 1.9rem;
-$fontSize18: 1.8rem;
-$fontSize16: 1.6rem;
+$titleSize: (1: 4rem,
+    2: 2.4rem,
+    3: 2.2rem);
+
+$fontSize:(xl: 2rem,
+    l: 1.9rem,
+    m: 1.8rem,
+    s: 1.6rem,
+    xs: 1.4rem,
+);
 
 $fontFamily: 'yekan';
+
+$bullets:(dash1: "\2010",
+    dash2: "\2011",
+    underline1: "\2012",
+    underline2: "\2013",
+    longUnderline1: "\2014",
+    longUnderline2: "\2015",
+    doublePipes: "\2016",
+    doubleUnderlines: "\2017",
+    longFlower: "\2020",
+    doubleFlowers: "\2021",
+    round: "\2022",
+    arrow: "\2023",
+    smallRound: "\2024",
+    doubleSmallRound: "\2025",
+    thripleSmallRound: "\2026",
+    landa: "\2041",
+    thickDash: "\2043",
+    star: "\2055",
+    3Dots: "\2056",
+    4Dots: "\2058",
+    5Dots: "\2059",
+    square: "■"
+);
