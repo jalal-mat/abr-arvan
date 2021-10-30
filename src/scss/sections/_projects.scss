@@ -1,0 +1,280 @@
+.projects {
+    @include section(inherit, 100vh, 70%, start);
+
+    @include responsive(xs) {
+        grid-template-columns: 90%;
+    }
+
+    &__description {
+        text-align: center;
+
+        @include responsive(xs) {
+            text-align: right;
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        @include responsive(xs) {
+            text-align: right;
+        }
+    }
+
+    &__header {
+        margin-top: 8rem;
+    }
+
+    &__body {
+        margin-bottom: 13rem;
+
+        @include responsive(xs) {
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__tabs-container {
+        display: flex;
+
+        @include responsive(xs) {
+            width: 100%;
+            justify-content: space-between;
+
+            object {
+                display: none;
+            }
+        }
+    }
+
+    &__tab {
+        @include borderStyle(0, 1.5rem 1.5rem 0 0);
+        background-color: $secondBorderLightGray;
+        padding: 1.5rem 3rem 1.5rem 3rem;
+        margin-left: 1rem;
+        cursor: pointer;
+
+        @include responsive(xs) {
+            background-color: lightGreen();
+            border-radius: 1.5rem;
+            color: normalGreen(second);
+            white-space: nowrap;
+            min-width: max-content;
+            width: 100%;
+        }
+    }
+
+    &__tab--active {
+        background-color: $whiteColor;
+
+        @include responsive(xs) {
+            color: $whiteColor;
+            background-color: normalGreen(second);
+        }
+    }
+
+    &__content {
+        display: none;
+
+        @include responsive(xs) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__content--active {
+        @include displayGrid(90%, center, .5rem 3rem);
+        border-radius: 2rem 0 2rem 2rem;
+        background-color: $whiteColor;
+
+        @include responsive(xs) {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__list {
+        cursor: pointer;
+        margin-bottom: 0;
+        border-bottom: .1rem solid $firstBorderLightGray;
+        border-radius: 0;
+        padding: 2rem 4rem 0rem 4rem;
+        transition: padding .5s ease, margin .5s ease;
+    }
+
+    &__list--active {
+        @include borderStyle(.1rem solid normalGreen(main), 1rem);
+        @include marginX(0, 0);
+        padding: 2rem 4rem 8rem 4rem;
+        transition: padding .5s ease, margin .5s ease;
+
+        @include responsive(xs) {
+            padding: 2rem 4rem 2rem 4rem;
+        }
+    }
+
+    &__list-container {
+        @include responsive(xs) {
+            margin-top: 0;
+        }
+    }
+
+    &__arrow-down {
+        float: left;
+        margin-top: .75rem;
+        cursor: pointer;
+        line-height: 50%;
+    }
+
+    &__feature {
+        @include displayGrid(repeat(4, 1fr), center, 2rem);
+        @include projectsShowHide(hidden, 0, 0);
+        width: 90%;
+        margin-right: 5%;
+        cursor: default;
+
+        @include responsive(xs) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__feature--active {
+        @include projectsShowHide(visible, max-content, 1);
+    }
+
+    &__item {
+        @include projectFeatures($thirdLightColor, center);
+
+        @include responsive(xs) {
+            grid-column: 1;
+            width: 100%;
+        }
+    }
+
+    &__item-icon {
+        margin-top: 1rem;
+    }
+
+    &__item-title {
+        @include marginY(.5rem, 0);
+    }
+
+    &__main-text {
+        margin-top: 0;
+    }
+
+    &__item-description {
+        @include projectFeatures($whiteColor, right);
+        grid-column: 1 / span 4;
+    }
+
+    &__item-description-row {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    &__item-description-icon {
+        margin: 0 2rem 0 2rem;
+
+        @include responsive(xs) {
+            margin: 0 0 0 2rem;
+        }
+    }
+
+    &__item-description-title {
+        align-self: center;
+    }
+
+    &__item-description-content {
+        grid-column: 2 / span 1;
+
+        @include responsive(xs) {
+            grid-column: 1 / span 2;
+        }
+    }
+
+    &__item-footer {
+        @include projectFeatures($whiteColor, right, calc(2rem - 1px));
+        @include displayGrid(repeat(2, 1fr), center);
+        @include borderStyle(.1rem solid $secondBorderLightGray, 1rem);
+        grid-column: 1 / span 4;
+
+        @include responsive(xs) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item-git {
+        @include projectFeatures($whiteColor, right, 0);
+        @include displayGrid(auto auto, right, 0);
+
+        @include responsive(xs) {
+            grid-template-columns: .25fr auto;
+        }
+    }
+
+    &__item-git-icon {
+        margin: 0 2rem 0 2rem;
+
+        @include responsive(xs) {
+            margin: 0;
+        }
+    }
+
+    &__item-git-title {
+        align-self: baseline;
+
+        @include responsive(xs) {
+            align-self: center;
+        }
+    }
+
+    &__item-git-content {
+        grid-column: 2;
+        margin: -3rem 0 0 2rem;
+
+        @include responsive(xs) {
+            grid-column: 1 / span 2;
+            margin: 0;
+        }
+    }
+
+    .project__item-git-url {
+        @include textStyle(fontSize(s), $mainTextColor);
+    }
+
+    &__item-author {
+        @include projectFeatures($whiteColor, left);
+        direction: ltr;
+
+        @include responsive(xs) {
+            display: none;
+        }
+    }
+
+    &__author-specs {
+        @include borderStyle(.1rem solid $firstBorderLightGray, 1rem);
+        @include displayFlex(max-content, center);
+        padding: .5rem 2rem .5rem 2rem;
+    }
+
+    &__author-name {
+        margin-top: 1.25rem;
+        margin-right: .5rem;
+    }
+
+    &__author-image {
+        margin-top: .75rem;
+    }
+
+    &__item-btn {
+        display: none;
+
+        @include responsive(xs) {
+            display: block;
+            color: $whiteColor;
+            @include borderStyle(0, 1rem);
+            @include widthAndBgColor(100%, normalGreen(second));
+            grid-column: 1/span 4;
+            justify-self: center;
+            padding: 1rem 0;
+        }
+    }
+}

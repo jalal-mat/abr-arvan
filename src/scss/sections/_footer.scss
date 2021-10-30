@@ -1,0 +1,36 @@
+.footer {
+    @include section(inherit, 35rem, 60%, center);
+
+    &__title {
+        @include title(hSize(1), darkGreen(forth));
+        text-align: center;
+        margin-top: 5rem;
+    }
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__slides-container {
+        padding: 0 10%;
+        @include displayFlex(null, center);
+        // display: flex;
+        // justify-content: center;
+    }
+
+    &__slide {
+        flex: 1 1 calc(100% / 7);
+        text-align: center;
+    }
+
+    &__arrow-left {
+        @include sliderArrow;
+        left: 0;
+    }
+
+    &__arrow-right {
+        @include sliderArrow;
+        right: 0;
+    }
+}

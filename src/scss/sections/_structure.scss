@@ -1,0 +1,109 @@
+.structure {
+    @include section($secondLightColor, 60vh, 100%, center);
+
+    &__header {
+        width: 70%;
+        margin: auto;
+        margin-top: 11rem;
+
+        @include responsive(xs) {
+            width: 90%;
+        }
+    }
+
+    &__title1 {
+        @include responsive(xs) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__body {
+        @include displayGrid(100%, center);
+    }
+
+    &__tabs {
+        @include displayFlex(100%, center);
+        border-bottom: .1rem solid $secondTextColor;
+    }
+
+    &__tabs-limiter {
+        @include displayFlex(50%, space-between);
+
+        @include responsive(xs) {
+            width: 100%;
+        }
+    }
+
+    &__tab-container {
+        position: relative;
+        max-width: max-content;
+    }
+
+    &__tab {
+        @include textStyle(fontSize(m), $secondTextColor);
+        background-color: inherit;
+        border: none;
+        padding: 1rem 0 1rem 0;
+    }
+
+    &__tab--active {
+        border-bottom: .3rem solid normalGreen(main);
+        color: darkGreen(forth);
+    }
+
+    &__tab-triangle {
+        position: absolute;
+        bottom: -6.11rem;
+        left: 0;
+        right: 0;
+        @include marginX(auto, auto);
+        display: none;
+    }
+
+    &__tab-triangle--active {
+        display: block;
+
+        @include responsive(xs) {
+            display: none;
+        }
+    }
+
+    &__content-container {
+        @include displayFlex(100%, center);
+    }
+
+    &__content-limiter {
+        @include displayFlex(50%, space-between);
+    }
+
+    &__content {
+        @include borderStyle(.3rem solid normalGreen(main), 1rem);
+        @include marginY(4rem, 10rem);
+        display: none;
+        padding: 2rem;
+        background-color: $whiteColor;
+        width: 100%;
+    }
+
+    &__title {
+        @include title(hSize(2), darkGreen(third));
+    }
+
+    &__content-text {
+        @include textStyle(fontSize(m), $structureContentText);
+    }
+
+    &__attendees {
+        @include title(fontSize(m), normalGreen(main));
+    }
+
+    &__content--active {
+        display: block;
+    }
+
+    &__description {
+        @include responsive(xs) {
+            margin-top: 0;
+        }
+    }
+}

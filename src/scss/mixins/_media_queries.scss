@@ -1,0 +1,50 @@
+@mixin xs() {
+    @media only screen and (max-width: 575.99px) {
+        @content;
+    }
+}
+
+@mixin sm() {
+    @media only screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin md() {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg() {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin xl() {
+    @media only screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+$responsiveSizes: xl 1200px,
+lg 992px,
+md 768px,
+sm 576px;
+
+@mixin responsive($breakpoint) {
+    @each $size in $responsiveSizes {
+        @if($breakpoint==xs) {
+            @media only screen and (max-width: 575.99) {
+                @content;
+            }
+        }
+
+        @else if ($breakpoint==nth($list: $size, $n: 1)) {
+            @media only screen and (min-width: nth($list: $size, $n: 2)) {
+                @content;
+            }
+        }
+    }
+}

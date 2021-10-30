@@ -1,0 +1,20 @@
+@font-face {
+    font-family: $fontFamily;
+    src: url(../../assets/fonts/Yekan.eot),
+        url(../../assets/fonts/Yekan.svg),
+        url(../../assets/fonts/Yekan.ttf),
+        url(../../assets/fonts/Yekan.woff);
+}
+
+html {
+    direction: rtl;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $fontFamily;
+    background-color: $mainBackgroundColor;
+    font-size: fontSize(s);
+    margin: 0;
+    overflow-x: hidden;
+}

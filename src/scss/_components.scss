@@ -1,0 +1,21 @@
+button {
+    font-family: $fontFamily;
+    cursor: pointer;
+}
+
+input {
+    @include borderStyle(.2rem solid $inputBorder, 1.2rem);
+    @include widthAndBgColor(100%, $whiteColor);
+    @include textStyle(fontSize(s), $secondTextColor, $fontFamily);
+    padding: .5rem 1.5rem 0.5rem 0;
+    justify-self: end;
+
+    &::placeholder {
+        color: $secondTextColor;
+    }
+
+
+    &:focus-visible {
+        outline: none;
+    }
+}

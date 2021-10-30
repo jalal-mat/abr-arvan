@@ -1,0 +1,31 @@
+@function normalGreen($name) {
+    @return map-get(map-get($greens, normal), $name);
+}
+
+@function lightGreen() {
+    @return map-get(map-get($greens, light), inactive);
+}
+
+@function darkGreen($name) {
+    @return map-get(map-get($greens, dark), $name);
+}
+
+@function hSize($i) {
+    @if($i > 3) {
+        $i: 3;
+    }
+
+    @if($i<1) {
+        $i: 1;
+    }
+
+    @return map-get($titleSize, $i);
+}
+
+@function bullet($shape) {
+    @return map-get($bullets, $shape);
+}
+
+@function fontSize($fs) {
+    @return map-get($fontSize, $fs);
+}

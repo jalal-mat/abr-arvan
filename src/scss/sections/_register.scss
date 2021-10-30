@@ -1,0 +1,164 @@
+.register {
+    @include section($whiteColor, 70vh, 50%, center);
+
+    &__title {
+        @include title(hSize(2), darkGreen(forth));
+        margin-top: 12rem;
+    }
+
+    &__form-part {
+        background-color: $mainBackgroundColor;
+        padding: 0.5rem 0 2.5rem 0;
+        margin-bottom: 2.4rem;
+        border-radius: 1.6rem;
+    }
+
+    &__form-title {
+        @include title(hSize(3), darkGreen(second));
+
+        &-icon {
+            float: right;
+            margin-left: 2rem;
+        }
+    }
+
+    &__inputs-part {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr 4fr;
+        row-gap: 2rem;
+        padding: 3rem;
+    }
+
+    &__label {
+        @include lableStyle;
+    }
+
+    &__label--required {
+        @include lableStyle;
+
+        &:after {
+            content: ' *';
+            color: normalGreen(main);
+        }
+    }
+
+    &__upload-container {
+        @include borderStyle(.2rem solid $inputBorder, 1.6rem);
+        width: 100%;
+        background-color: $whiteColor;
+        float: right;
+
+        input {
+            width: auto;
+            float: right;
+            border: 0;
+        }
+
+        .register__btn--upload {
+            @include textStyle(fontSize(s), $secondTextColor);
+            @include widthAndBgColor(auto, $secondLightColor);
+            border-radius: 1.2rem;
+            border-right: .2rem solid $inputBorder;
+            padding: .5rem 1rem;
+            float: left;
+        }
+
+        &:hover {
+            @extend .register__upload-container--active;
+        }
+    }
+
+    &__upload-container--active {
+        @include borderStyle(.2rem solid normalGreen(main), 1.6rem);
+
+        input {
+            color: normalGreen(main);
+        }
+
+        .register__btn--upload {
+            background-color: normalGreen(main);
+            color: $whiteColor;
+            cursor: pointer;
+        }
+    }
+
+    &__upload-container--error {
+        @include borderStyle(.2rem solid $errorColor, 1.6rem);
+
+        input {
+            color: $errorColor;
+        }
+
+        .register__btn--upload {
+            background-color: $secondLightColor;
+            color: $errorColor;
+            border-right: .2rem solid $errorColor;
+        }
+    }
+
+
+    %upload-hint {
+        color: $secondTextColor;
+        align-self: start;
+        justify-self: end;
+        margin-top: -1.8rem;
+    }
+
+    &__upload-hint--1 {
+        @extend %upload-hint;
+        grid-column: 1 / span 2;
+    }
+
+    &__upload-hint--2 {
+        @extend %upload-hint;
+        grid-column: 3 / span 4;
+    }
+
+    &__select {
+        @extend input;
+    }
+
+    &__text-area {
+        @include borderStyle(.1rem solid $inputBorder, 1.2rem);
+        @include textStyle(fontSize(s), $secondTextColor, $fontFamily);
+        grid-column: 1 / span 4;
+        padding: 1.3rem 2.4rem;
+
+        &::placeholder {
+            color: $secondTextColor;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 13rem;
+    }
+
+    &__tip {
+        color: normalGreen(main);
+    }
+
+    &__btn--submit {
+        @include textStyle(fontSize(s), $whiteColor);
+        @include widthAndBgColor(18rem, normalGreen(main));
+        @include borderStyle(.1rem solid $registerBorder, 1.2rem);
+        height: max-content;
+        padding: .75rem;
+
+        &:hover {
+            background-color: normalGreen(third);
+        }
+
+        &:disabled {
+            cursor: default;
+            background-color: $secondLightColor;
+            color: $secondTextColor;
+        }
+    }
+}
